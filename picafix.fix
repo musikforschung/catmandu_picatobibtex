@@ -1,0 +1,249 @@
+pica_map('003@0','ppn');
+pica_map('004A0','isbn',join:', ');
+pica_map('004V0','doi');
+pica_map('010@a','language',join:', ');
+pica_map('010@c','language_original');
+pica_map('011@ab','year',join:'-');
+pica_map('017Cu','url',join:', ');
+pica_map('017Du','url',join:', ');
+pica_map('019@a','country',join:', ');
+pica_map('021Aad','title',join:' : ');
+pica_map('037Ce','institution');
+
+
+# author (PICA3 3000)
+if pica_match ('028A')
+   pica_map('028Aad','author.$append',join:', ',pluck:1)
+   pica_map('028APl','author.$append',join:', ',pluck:1)
+   pica_map('028A8','author.$append',pluck:1)
+end
+
+# author PICA3 (3001-3002)
+if pica_match ('028B')
+   pica_map('028Bad','author.$append',join:', ',pluck:1)
+   pica_map('028BPl','author.$append',join:', ',pluck:1)
+   pica_map('028B8','author.$append',pluck:1)
+end
+
+# further authors, collaborators etc. (PICA3 3010)
+do pica_each()
+   if pica_match('028C4B',"aut|author|ivr|ive|pbl|Verfasser|VerfasserIn|Verfasserin")
+      pica_map('028Cad','author.$append',join:', ',pluck:1)
+      pica_map('028CP','author.$append',join:', ',pluck:1)
+      pica_map('028C8','author.$append',pluck:1)
+      pica_map('028Cc8','author.$append',join:' ',pluck:1)
+elsif pica_match('028C4B',"translator|trl") 
+      pica_map('028Cad','author_translator.$append',join:', ',pluck:1)
+      pica_map('028CP','author_translator.$append',join:', ',pluck:1)
+      pica_map('028C8','author_translator.$append',pluck:1)
+      pica_map('028Cc8','author_translator.$append',join:' ',pluck:1)
+elsif pica_match('028C4B',"ill|ill.") 
+      pica_map('028Cad','author_illustrator.$append',join:', ',pluck:1)
+      pica_map('028CP','author_illustrator.$append',join:', ',pluck:1)
+      pica_map('028C8','author_illustrator.$append',pluck:1)
+      pica_map('028Cc8','author_illustrator.$append',join:' ',pluck:1)
+      elsif pica_match('028C4B',"dgs|Akademischer Betreuer|Akademische Betreuerin") 
+      pica_map('028Cad','author_supervisor.$append',join:', ',pluck:1)
+      pica_map('028CP','author_supervisor.$append',join:', ',pluck:1)
+      pica_map('028C8','author_supervisor.$append',pluck:1)
+      pica_map('028Cc8','author_supervisor.$append',join:' ',pluck:1)
+elsif pica_match('028C4B',"tlbt|ctb|oth|wpr|pan|Mitarb.|Bearb.") 
+      pica_map('028Cad','author_collaborator.$append',join:', ',pluck:1)
+      pica_map('028CP','author_collaborator.$append',join:', ',pluck:1)
+      pica_map('028C8','author_collaborator.$append',pluck:1)
+      pica_map('028Cc8','author_collaborator.$append',join:' ',pluck:1)
+elsif pica_match('028C4B',"wac|Komm.")
+      pica_map('028Cad','author_commentator.$append',join:', ',pluck:1)
+      pica_map('028CP','author_commentator.$append',join:', ',pluck:1)
+      pica_map('028C8','author_commentator.$append',pluck:1)
+      pica_map('028Cc8','author_commentator.$append',join:' ',pluck:1)
+elsif pica_match('028C4B',"com")
+      pica_map('028Cad','author_compiled.$append',join:', ',pluck:1)
+      pica_map('028CP','author_compiled.$append',join:', ',pluck:1)
+      pica_map('028C8','author_compiled.$append',pluck:1)
+      pica_map('028Cc8','author_compiled.$append',join:' ',pluck:1)
+elsif pica_match('028C4B',"wpr")
+      pica_map('028Cad','author_foreword.$append',join:', ',pluck:1)
+      pica_map('028CP','author_foreword.$append',join:', ',pluck:1)
+      pica_map('028C8','author_foreword.$append',pluck:1)
+      pica_map('028Cc8','author_foreword.$append',join:' ',pluck:1)
+elsif pica_match('028C4B',"aft")
+      pica_map('028Cad','author_afterword.$append',join:', ',pluck:1)
+      pica_map('028CP','author_afterword.$append',join:', ',pluck:1)
+      pica_map('028C8','author_afterword.$append',pluck:1)
+      pica_map('028Cc8','author_afterword.$append',join:' ',pluck:1)
+elsif pica_match('028C4B',"win")
+      pica_map('028Cad','author_introduction.$append',join:', ',pluck:1)
+      pica_map('028CP','author_introduction.$append',join:', ',pluck:1)
+      pica_map('028C8','author_introduction.$append',pluck:1)
+      pica_map('028Cc8','author_introduction.$append',join:' ',pluck:1)
+elsif pica_match('028C4',"hnr")
+      pica_map('028Cad','honoured')
+      pica_map('028CP','honoured')
+      pica_map('028C8','honoured')
+      pica_map('028Cc8','honoured')
+else  pica_map('028Cad','editor.$append',join:', ',pluck:1)
+      pica_map('028CP','editor.$append',join:', ',pluck:1)
+      pica_map('028C8','editor.$append',pluck:1)
+      pica_map('028Cc8','editor.$append',join:' ',pluck:1)
+   end
+end
+  
+# corporation (PICA3 3100)
+do pica_each()
+   if pica_match ('029A4',"com")
+      pica_map('029Aa','editor.$append')
+      pica_map('029A8','editor.$append')
+else  pica_map('029Aa','author.$append')
+      pica_map('029A8','author.$append')
+   end
+end
+
+# further corporations (PICA3 3110)
+do pica_each()
+   if pica_match ('029F4',"edt|isb|com")
+      pica_map('029Fa','editor.$append')
+      pica_map('029F8','editor.$append')
+elsif pica_match ('029F4',"ill|ill.") 
+      pica_map('029Fa','author_illustrator.$append')
+      pica_map('029F8','author_illustrator.$append')
+elsif pica_match ('029F4',"trl") 
+      pica_map('029Fa','author_translator.$append')
+      pica_map('029F8','author_translator.$append')
+elsif pica_match ('029F4',"ctb") 
+      pica_map('029Fa','author_collaborator.$append')
+      pica_map('029F8','author_collaborator.$append')
+      elsif pica_match ('029F4',"dgs") 
+      pica_map('029Fa','author_supervisor.$append')
+      pica_map('029F8','author_supervisor.$append')
+elsif pica_match ('029F4',"pbl")
+      pica_map('029Fa','ignore')
+      pica_map('029F8','ignore')
+else  pica_map('029Fa','author.$append')
+      pica_map('029F8','author.$append')
+      end
+end
+
+# proceedings
+pica_map('030Fa','eventtitle',join:', ');
+pica_map('030Fk','location',join:', ');
+pica_map('030Fp','eventdate',join:', ');
+pica_map('031Ah','pages');
+pica_map('031Ad','volume');
+pica_map('031Ae','number');
+pica_map('031Aj','year');
+pica_map('033An','publisher',join:', ');
+pica_map('033Ap','address',join:', ');
+pica_map('033D8','address',join:', ');
+pica_map('034Da','pages');
+
+# notes (PICA3 4061)
+pica_map('034Ma','note');
+replace_all('note',"Audiosequenzen\, |Audiosequenz\ ,|Videosequenzen\, |Videosequenz\, |Audiosequenzen|Audiosequenz|Videosequenzen|Videosequenz|Klangbeisp.","");
+replace_all('note',"[0123456789]","");
+replace_all('note',";|cm","");
+replace_all('note',"DDD|Stereo|Mono|. Channel Surround Sound|mit |schw.-w. |mit Beiheft|Beiheft|circa ","");
+replace_all('note',"music|maps","");
+replace_all('note',"überw. ","");
+replace_all('note',"Rätsel und Anleitungen","");
+split_field('note',', |,');
+
+# series and numbers (PICA3 4151-4159, 4170-4179, 4180-4189)
+pica_map('036Ca','series',join:', ');
+pica_map('036Cl','number',join:', ');
+pica_map('036Ea','series',join:', ');
+pica_map('036El','number',join:', ');
+pica_map('036Em','number',join:', ');
+pica_map('036F8','series',join:', ');
+pica_map('036Fl','number',join:', ');
+
+# ---------- abstracts (PICA3 4207), (by Johann Rolschewski)
+if pica_match(047I,"\(.*\)$")
+   pica_map(047Ia,tmp)
+   parse_text(tmp,"(?<abstract>.*\.)\s\((?<abstractor>.*)\)")
+   move_field(tmp.abstract,abstract)
+   move_field(tmp.abstractor,abstractor)
+   remove_field(tmp)
+else
+   pica_map(047Ia,abstract)
+end
+
+## document types
+# type book
+if pica_match ('002@0/0-1','[A,C,E,H,O,S,Z][a,d,f,F,v]')
+   pica_map('002@0/0-1','type')
+end
+  
+# type journal
+if pica_match ('002@0/0-1','[A,C,E,H,O,S,Z]b')
+  pica_map('002@0/0-1','type')
+end
+
+# type collection
+if pica_match('099@b','sb')
+   pica_map('099@b','type')
+end
+
+# type proceedings
+if pica_match('013D8','Konferenzschrift')
+   pica_map('013D8','type')
+end
+
+# type thesis
+if pica_match('037C','Dissertation')
+   set_field('type','dd')
+end
+
+if pica_match('037C','Bachelorarbeit|Diplomarbeit|Habilitationsschrift|Habilitation|Lizensiatsarbeit|Magisterarbeit|Masterarbeit')
+   set_field('type','dm')
+end
+
+# type incollection
+if pica_match ('099@i/0','B')
+   pica_map('099@i/0','type')
+   pica_map('039B9','crossref')
+end
+
+# type article
+if pica_match ('099@i/0','J') 
+   pica_map('099@i/0','type')   
+   pica_map('039B8','journal')
+end
+
+# type festschrift
+if pica_match('013D8','Festschrift')
+   pica_map('013D8','type')
+end
+
+# type infestschrift/inproceeding
+if pica_match('099@i',"B")
+   pica_map('039B9','type')
+   lookup('type',"festschrift_proceeding_ppn.csv", default:B)
+end
+
+# type review
+if pica_match('099@c/0-2','re')
+   pica_map('099@ci','type')
+   pica_map('039P96','revieweditem',join:'_')
+end
+
+# type audio
+if pica_match ('002Db/0','s')
+   pica_map('002Db/0','type')
+   replace_all('type',"s","audio")
+end
+
+# type video
+if pica_match ('002Da','video')
+   pica_map('002Da','type')
+end
+
+# article, country code
+if pica_match('099@i',"B|J")
+   pica_map('039B9','country')
+end
+
+
+
+remove_field('record');
+

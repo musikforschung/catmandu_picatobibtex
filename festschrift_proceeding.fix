@@ -1,0 +1,13 @@
+## Articles in Festschrift and proceedings needs RILM tag "ae" or "as". This information must be taken from the superordinate work. 
+
+# select ID of all Festschrift or proceeding and assign the tag
+
+select pica_match('013D8',"Festschrift|Konferenzschrift");
+
+if pica_match('013D8',"Festschrift")
+   set_field('type',"ae")
+elsif pica_match('013D8',"Konferenzschrift")
+   set_field('type',"as")
+end
+
+remove_field('record');

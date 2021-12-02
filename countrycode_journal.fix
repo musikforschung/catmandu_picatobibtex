@@ -1,0 +1,12 @@
+# RILM needs the country code in all articles. This information must be taken from the superordinate work (journal).
+
+# select Id of all journals and assign the country code
+
+select pica_match('002@0/0-1','[A,C,E,H,O,S,Z][a,b,d,f,F,v]');
+
+if pica_match('002@0/0-1','[A,C,E,H,O,S,Z][a,b,d,f,F,v]')
+   pica_map('019@a','country',join:', ')
+   pica_map('003@0',"_id")
+end
+
+remove_field('record');
