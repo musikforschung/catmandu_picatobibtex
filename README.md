@@ -25,7 +25,7 @@ The German editorial office of the Répertoire International de Littérature Mus
 
 1. installation of Catmandu and the required modules.
 2. download all files into the home directory.
-3. replace the file [BibTeX.pm] under the path "/home/kim/perl5/perlbrew/perls/perl-5.30.3/lib/site_perl/5.30.3/Catmandu/Exporter/BibTeX.pm" with the file contained here.
+3. replace the file [BibTeX.pm](Catmandu_PICAtoBibTeX/BibTeX.pm) under the path "/home/kim/perl5/perlbrew/perls/perl-5.30.3/lib/site_perl/5.30.3/Catmandu/Exporter/BibTeX.pm" with the file contained here.
 3. place the file with the PICA+ data (dmpbms.pp) also in the home directory.
 4. validation of the PICA+ data. For example with [Catmandu::Validator::PICA](https://metacpan.org/pod/Catmandu::Validator::PICA).
 5. using the command "catmandu convert PICA --type plain to CSV --fix festschrift_proceeding < dmpbms.pp > festschrift_proceeding_ppn.csv" in the command line, create a list with all IDs of the conference and festschrifts and the corresponding RILM-tags for the included essays. Insert "$ less festschrift_proceeding_ppn.csv" into the header. 
@@ -87,7 +87,7 @@ Am Staatlichen Institut für Musikforschung (SIM) befindet sich die deutsche Red
 
 1. Installation von Catmandu und der benötigten Module.
 2. Download aller Dateien in das Home-Verzeichnis.
-3. Die Datei [BibTeX.pm] unter dem Pfad "/home/kim/perl5/perlbrew/perls/perl-5.30.3/lib/site_perl/5.30.3/Catmandu/Exporter/BibTeX.pm" mit der hier enthaltenen Datei ersetzen.
+3. Die Datei [BibTeX.pm](Catmandu_PICAtoBibTeX/BibTeX.pm) unter dem Pfad "/home/kim/perl5/perlbrew/perls/perl-5.30.3/lib/site_perl/5.30.3/Catmandu/Exporter/BibTeX.pm" mit der hier enthaltenen Datei ersetzen.
 3. Die Datei mit den PICA+ Daten (dmpbms.pp) ebenfalls im Home-Verzeichnis ablegen.
 4. Validation der PICA+ Daten. Zum Beispiel mit [Catmandu::Validator::PICA](https://metacpan.org/pod/Catmandu::Validator::PICA).
 5. Mit dem Befehl "catmandu convert PICA --type plain to CSV --fix festschrift_proceeding < dmpbms.pp > festschrift_proceeding_ppn.csv" in der Kommandozeile eine Liste mit allen IDs der Konferenz- und Festschriften erstellen und den dazugehörigen RILM-tags für die enthaltenen Aufsätze. In den header "$ less festschrift_proceeding_ppn.csv" einfügen. 
