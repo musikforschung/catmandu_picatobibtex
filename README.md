@@ -8,13 +8,13 @@ Transformation of bibliographic data from PICA+ format to BibTeX format for RILM
 
 The German editorial office of the Répertoire International de Littérature Musiicale (RILM) is located at the State Institute for Music Research (SIM). As such, the SIM transmits all entries of the [Bibliographie des Musikschrifttums](https://www.musikbibliographie.de/) (BMS) appearing in Germany to the central editorial office of [RILM Abstracts of Music Literature](https://www.rilm.org/abstracts/) on a quarterly basis. The bibliographic data of the BMS are in PICAplus format and must be transformed into BibTeX format for further processing in the RILM central editorial office. For this purpose, the SIM uses the command line tool Catmandu. Further information on Catmandu is available here https://librecat.org/Catmandu. 
 
-* [festschrift_proceeding.fix](Catmandu_PICAtoBibTex/festschrift_proceeding.fix) selects the IDs of all conference and festschriften and assigns the RILM-tag to them. The selected RILM-tags and IDs are written to a csv file and in a later step transferred to the articles contained in the conference and festschrift proceedings.
-* The script [countrycode_collection.fix](Catmandu_PICAtoBibTeX/countrycode_collection.fix) selects the country codes and IDs of all anthologies. The loader codes are written to a csv file and transferred to the essays contained in the anthologies in a later step.
-* [countrycode_journal.fix](Catmandu_PICAtoBibTeX/countrycode_journal.fix) selects the country codes and IDs of all journals. The loader codes are written to a csv file and in a later step transferred to the articles contained in the journals.
-* [BibTeX.pm](Catmandu_PICAtoBibTeX/BibTeX.pm) contains some RILM specific fields in BibTeX which are not supported in the original module.
-* [note.csv](Catmandu_PICAtoBibTeX/note.csv) contains the illustration details of the PICA field 034M and the corresponding RILM tag.
-* [picafix.fix](Catmandu_PICAtoBibTeX/picafix.fix) contains the script for transforming the necessary PICA+ data into the BibTeX format.
-* [replace.fix](Catmandu_PICAtoBibTeX/replace.fix) is needed for cleaning up the transformed data.
+* [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) contains some RILM specific fields in BibTeX which are not supported in the original module.
+* The script [countrycode_collection.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/countrycode_collection.fix) selects the country codes and IDs of all collections. The loader codes are written to a csv file and transferred to the essays contained in the collections in a later step.
+* [countrycode_journal.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/countrycode_journal.fix) selects the country codes and IDs of all journals. The loader codes are written to a csv file and in a later step transferred to the articles contained in the journals.
+* [festschrift_proceeding.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/festschrift_proceeding.fix) selects the IDs of all conference and festschriften and assigns the RILM-tag to them. The selected RILM-tags and IDs are written to a csv file and in a later step transferred to the articles contained in the conference and festschrift proceedings.
+* [note.csv](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/note.csv) contains the illustration details of the PICA field 034M and the corresponding RILM tag.
+* [picafix.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/picafix.fix) contains the script for transforming the necessary PICA+ data into the BibTeX format.
+* [replace.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/replace.fix) is needed for cleaning up the transformed data.
 
 # required Catmandu modules
 
@@ -25,7 +25,7 @@ The German editorial office of the Répertoire International de Littérature Mus
 
 1. installation of Catmandu and the required modules.
 2. download all files into the home directory.
-3. replace the file [BibTeX.pm](Catmandu_PICAtoBibTeX/BibTeX.pm) under the path "/home/kim/perl5/perlbrew/perls/perl-5.30.3/lib/site_perl/5.30.3/Catmandu/Exporter/BibTeX.pm" with the file contained here.
+3. replace the file [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) under the path "/home/kim/perl5/perlbrew/perls/perl-5.30.3/lib/site_perl/5.30.3/Catmandu/Exporter/BibTeX.pm" with the file contained here.
 3. place the file with the PICA+ data (dmpbms.pp) also in the home directory.
 4. validation of the PICA+ data. For example with [Catmandu::Validator::PICA](https://metacpan.org/pod/Catmandu::Validator::PICA).
 5. using the command "catmandu convert PICA --type plain to CSV --fix festschrift_proceeding < dmpbms.pp > festschrift_proceeding_ppn.csv" in the command line, create a list with all IDs of the conference and festschrifts and the corresponding RILM-tags for the included essays. Insert "$ less festschrift_proceeding_ppn.csv" into the header. 
@@ -50,7 +50,7 @@ Use the command "catmandu convert PICA --type plain to CSV --fix countrycode_jou
 
 # Licenses
 
-The file [BibTeX.pm](Catmandu_PICAtoBibTex/BibTeX.pm) is licensed with perl_5. All other files are [CCO](https://creativecommons.org/share-your-work/public-domain/cc0/).
+The file [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) is licensed with perl_5. All other files are [CCO](https://creativecommons.org/share-your-work/public-domain/cc0/).
 
 
 </details>
@@ -70,13 +70,13 @@ Am Staatlichen Institut für Musikforschung (SIM) befindet sich die deutsche Red
 
 # Beschreibung der Dateien
 
-* [festschrift_proceeding.fix](Catmandu_PICAtoBibTeX/festschrift_proceeding.fix) selektiert die IDs aller Konferenz- und Festschriften und ordnet ihnen den RILM-tag zu. Die selektierten RILM-tags und IDs werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Konferenz- und Festschriften enthaltenen Aufsätzen übertragen.
-* Das Script [countrycode_collection.fix](Catmandu_PICAtoBibTeX/countrycode_collection.fix) selektiert die Ländercodes und IDs aller Sammelbände. Die Lädercodes werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Sammelbänden enthaltenen Aufsätze übertragen.
-* [countrycode_journal.fix](Catmandu_PICAtoBibTex/countrycode_journal.fix) selektiert die Ländercodes und IDs aller Zeitschriften. Die Lädercodes werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Zeitschriften enthaltenen Aufsätze übertragen.
-* [BibTeX.pm](Catmandu_PICAtoBibTex/BibTeX.pm) enthält einige RILM-spezifische Felder in BibTeX, die im ursprünglichen Modul nicht unterstützt werden.
-* [note.csv](Catmandu_PICAtoBibTex/note.csv) enthält die Illustrationsangaben des PICA-Feldes 034M und den entsprechenden RILM-tag.
-* [picafix.fix](Catmandu_PICAtoBibTeX/picafix.fix) enthält das Script für die Transformation der notwendigen PICA+ Daten in das Format BibTeX.
-* [replace.fix](Catmandu_PICAtoBibTeX/replace.fix) wird für die Bereinigung der transformierten Daten benötigt.
+* [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) enthält einige RILM-spezifische Felder in BibTeX, die im ursprünglichen Modul nicht unterstützt werden.
+* Das Script [countrycode_collection.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/countrycode_collection.fix) selektiert die Ländercodes und IDs aller Sammelbände. Die Lädercodes werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Sammelbänden enthaltenen Aufsätze übertragen.
+* [countrycode_journal.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/countrycode_journal.fix) selektiert die Ländercodes und IDs aller Zeitschriften. Die Lädercodes werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Zeitschriften enthaltenen Aufsätze übertragen.
+* [festschrift_proceeding.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/festschrift_proceeding.fix) selektiert die IDs aller Konferenz- und Festschriften und ordnet ihnen den RILM-tag zu. Die selektierten RILM-tags und IDs werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Konferenz- und Festschriften enthaltenen Aufsätzen übertragen.
+* [note.csv](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/note.csv) enthält die Illustrationsangaben des PICA-Feldes 034M und den entsprechenden RILM-tag.
+* [picafix.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/picafix.fix) enthält das Script für die Transformation der notwendigen PICA+ Daten in das Format BibTeX.
+* [replace.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/replace.fix) wird für die Bereinigung der transformierten Daten benötigt.
 
 #  benötigte Catmandu-Module
 
@@ -87,7 +87,7 @@ Am Staatlichen Institut für Musikforschung (SIM) befindet sich die deutsche Red
 
 1. Installation von Catmandu und der benötigten Module.
 2. Download aller Dateien in das Home-Verzeichnis.
-3. Die Datei [BibTeX.pm](Catmandu_PICAtoBibTeX/BibTeX.pm) unter dem Pfad "/home/kim/perl5/perlbrew/perls/perl-5.30.3/lib/site_perl/5.30.3/Catmandu/Exporter/BibTeX.pm" mit der hier enthaltenen Datei ersetzen.
+3. Die Datei [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) unter dem Pfad "/home/kim/perl5/perlbrew/perls/perl-5.30.3/lib/site_perl/5.30.3/Catmandu/Exporter/BibTeX.pm" mit der hier enthaltenen Datei ersetzen.
 3. Die Datei mit den PICA+ Daten (dmpbms.pp) ebenfalls im Home-Verzeichnis ablegen.
 4. Validation der PICA+ Daten. Zum Beispiel mit [Catmandu::Validator::PICA](https://metacpan.org/pod/Catmandu::Validator::PICA).
 5. Mit dem Befehl "catmandu convert PICA --type plain to CSV --fix festschrift_proceeding < dmpbms.pp > festschrift_proceeding_ppn.csv" in der Kommandozeile eine Liste mit allen IDs der Konferenz- und Festschriften erstellen und den dazugehörigen RILM-tags für die enthaltenen Aufsätze. In den header "$ less festschrift_proceeding_ppn.csv" einfügen. 
@@ -112,7 +112,7 @@ Am Staatlichen Institut für Musikforschung (SIM) befindet sich die deutsche Red
 
 # Lizenzen
 
-Die Datei [BibTeX.pm](Catmandu_PICAtoBibTex/BibTeX.pm) ist mit perl_5 lizensiert. Alle anderen Dateien sind [CCO](https://creativecommons.org/share-your-work/public-domain/cc0/).
+Die Datei [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) ist mit perl_5 lizensiert. Alle anderen Dateien sind [CCO](https://creativecommons.org/share-your-work/public-domain/cc0/).
 
 </details>
 
