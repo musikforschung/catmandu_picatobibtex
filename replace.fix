@@ -1,4 +1,4 @@
-## delete redundant characters, rename and add data
+# delete redundant characters, rename and add data
 
 replace_all('title',"@","");
 replace_all('title',"\[","");
