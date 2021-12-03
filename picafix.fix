@@ -10,7 +10,6 @@ pica_map('019@a','country',join:', ');
 pica_map('021Aad','title',join:' : ');
 pica_map('037Ce','institution');
 
-
 # author (PICA3 3000)
 if pica_match ('028A')
    pica_map('028Aad','author.$append',join:', ',pluck:1)
