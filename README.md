@@ -70,7 +70,7 @@ Am Staatlichen Institut für Musikforschung (SIM) befindet sich die deutsche Red
 
 # Beschreibung der Dateien
 
-* [festschrift_proceeding.fix](Catmandu_PICAtoBibTex/festschrift_proceeding.fix) selektiert die IDs aller Konferenz- und Festschriften und ordnet ihnen den RILM-tag zu. Die selektierten RILM-tags und IDs werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Konferenz- und Festschriften enthaltenen Aufsätzen übertragen.
+* [festschrift_proceeding.fix](Catmandu_PICAtoBibTeX/festschrift_proceeding.fix) selektiert die IDs aller Konferenz- und Festschriften und ordnet ihnen den RILM-tag zu. Die selektierten RILM-tags und IDs werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Konferenz- und Festschriften enthaltenen Aufsätzen übertragen.
 * Das Script [countrycode_collection.fix](Catmandu_PICAtoBibTeX/countrycode_collection.fix) selektiert die Ländercodes und IDs aller Sammelbände. Die Lädercodes werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Sammelbänden enthaltenen Aufsätze übertragen.
 * [countrycode_journal.fix](Catmandu_PICAtoBibTex/countrycode_journal.fix) selektiert die Ländercodes und IDs aller Zeitschriften. Die Lädercodes werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Zeitschriften enthaltenen Aufsätze übertragen.
 * [BibTeX.pm](Catmandu_PICAtoBibTex/BibTeX.pm) enthält einige RILM-spezifische Felder in BibTeX, die im ursprünglichen Modul nicht unterstützt werden.
