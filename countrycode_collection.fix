@@ -1,5 +1,4 @@
 # RILM needs the country code in all articles. This information must be taken from the superordinate work (collection).
-
 # select Id of all collections and assign the country code
 
 select pica_match('099@b','sb');
