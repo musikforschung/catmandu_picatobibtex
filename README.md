@@ -6,15 +6,15 @@
 
 Transformation of bibliographic data from PICA+ format to BibTeX format for RILM
 
-The German editorial office of the Répertoire International de Littérature Musiicale (RILM) is located at the State Institute for Music Research (SIM). As such, the SIM transmits all entries of the [Bibliographie des Musikschrifttums](www.musikbibliographie.de/) (BMS) appearing in Germany to the central editorial office of [RILM Abstracts of Music Literature](https://www.rilm.org/abstracts/) on a quarterly basis. The bibliographic data of the BMS are in PICAplus format and must be transformed into BibTeX format for further processing in the RILM central editorial office. For this purpose, the SIM uses the command line tool Catmandu. Further information on Catmandu is available here https://librecat.org/Catmandu. 
+The German editorial office of the Répertoire International de Littérature Musiicale (RILM) is located at the State Institute for Music Research (SIM). As such, the SIM transmits all entries of the [Bibliographie des Musikschrifttums](https://www.musikbibliographie.de/) (BMS) appearing in Germany to the central editorial office of [RILM Abstracts of Music Literature](https://www.rilm.org/abstracts/) on a quarterly basis. The bibliographic data of the BMS are in PICAplus format and must be transformed into BibTeX format for further processing in the RILM central editorial office. For this purpose, the SIM uses the command line tool Catmandu. Further information on Catmandu is available here https://librecat.org/Catmandu. 
 
 * [festschrift_proceeding.fix](Catmandu_PICAtoBibTex/festschrift_proceeding.fix) selects the IDs of all conference and festschriften and assigns the RILM-tag to them. The selected RILM-tags and IDs are written to a csv file and in a later step transferred to the articles contained in the conference and festschrift proceedings.
 * The script [countrycode_collection.fix](Catmandu_PICAtoBibTeX/countrycode_collection.fix) selects the country codes and IDs of all anthologies. The loader codes are written to a csv file and transferred to the essays contained in the anthologies in a later step.
-* [countrycode_journal.fix](Catmandu_PICAtoBibTex/countrycode_journal.fix) selects the country codes and IDs of all journals. The loader codes are written to a csv file and in a later step transferred to the articles contained in the journals.
-* [BibTeX.pm](Catmandu_PICAtoBibTex/BibTeX.pm) contains some RILM specific fields in BibTeX which are not supported in the original module.
-* [note.csv](Catmandu_PICAtoBibTex/note.csv) contains the illustration details of the PICA field 034M and the corresponding RILM tag.
-* [picafix.fix](Catmandu_PICAtoBibTex/picafix.fix) contains the script for transforming the necessary PICA+ data into the BibTeX format.
-* [replace.fix](Catmandu_PICAtoBibTex/replace.fix) is needed for cleaning up the transformed data.
+* [countrycode_journal.fix](Catmandu_PICAtoBibTeX/countrycode_journal.fix) selects the country codes and IDs of all journals. The loader codes are written to a csv file and in a later step transferred to the articles contained in the journals.
+* [BibTeX.pm](Catmandu_PICAtoBibTeX/BibTeX.pm) contains some RILM specific fields in BibTeX which are not supported in the original module.
+* [note.csv](Catmandu_PICAtoBibTeX/note.csv) contains the illustration details of the PICA field 034M and the corresponding RILM tag.
+* [picafix.fix](Catmandu_PICAtoBibTeX/picafix.fix) contains the script for transforming the necessary PICA+ data into the BibTeX format.
+* [replace.fix](Catmandu_PICAtoBibTeX/replace.fix) is needed for cleaning up the transformed data.
 
 # required Catmandu modules
 
@@ -75,8 +75,8 @@ Am Staatlichen Institut für Musikforschung (SIM) befindet sich die deutsche Red
 * [countrycode_journal.fix](Catmandu_PICAtoBibTex/countrycode_journal.fix) selektiert die Ländercodes und IDs aller Zeitschriften. Die Lädercodes werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Zeitschriften enthaltenen Aufsätze übertragen.
 * [BibTeX.pm](Catmandu_PICAtoBibTex/BibTeX.pm) enthält einige RILM-spezifische Felder in BibTeX, die im ursprünglichen Modul nicht unterstützt werden.
 * [note.csv](Catmandu_PICAtoBibTex/note.csv) enthält die Illustrationsangaben des PICA-Feldes 034M und den entsprechenden RILM-tag.
-* [picafix.fix](Catmandu_PICAtoBibTex/picafix.fix) enthält das Script für die Transformation der notwendigen PICA+ Daten in das Format BibTeX.
-* [replace.fix](Catmandu_PICAtoBibTex/replace.fix) wird für die Bereinigung der transformierten Daten benötigt.
+* [picafix.fix](Catmandu_PICAtoBibTeX/picafix.fix) enthält das Script für die Transformation der notwendigen PICA+ Daten in das Format BibTeX.
+* [replace.fix](Catmandu_PICAtoBibTeX/replace.fix) wird für die Bereinigung der transformierten Daten benötigt.
 
 #  benötigte Catmandu-Module
 
