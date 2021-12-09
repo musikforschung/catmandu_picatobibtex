@@ -8,6 +8,8 @@ Transformation of bibliographic data from PICA+ format to BibTeX format for RILM
 
 The German editorial office of the Répertoire International de Littérature Musiicale (RILM) is located at the State Institute for Music Research (SIM). As such, the SIM transmits all entries of the [Bibliographie des Musikschrifttums](https://www.musikbibliographie.de/) (BMS) appearing in Germany to the central editorial office of [RILM Abstracts of Music Literature](https://www.rilm.org/abstracts/) on a quarterly basis. The bibliographic data of the BMS are in PICAplus format and must be transformed into BibTeX format for further processing in the RILM central editorial office. For this purpose, the SIM uses the command line tool Catmandu. Further information on Catmandu is available here https://librecat.org/Catmandu. 
 
+# Files description
+
 * [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) contains some RILM specific fields in BibTeX which are not supported in the original module.
 * The script [countrycode_collection.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/countrycode_collection.fix) selects the country codes and IDs of all collections. The loader codes are written to a csv file and transferred to the essays contained in the collections in a later step.
 * [countrycode_journal.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/countrycode_journal.fix) selects the country codes and IDs of all journals. The loader codes are written to a csv file and in a later step transferred to the articles contained in the journals.
@@ -16,7 +18,7 @@ The German editorial office of the Répertoire International de Littérature Mus
 * [picafix.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/picafix.fix) contains the script for transforming the necessary PICA+ data into the BibTeX format.
 * [replace.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/replace.fix) is needed for cleaning up the transformed data.
 
-# required Catmandu modules
+# Required Catmandu modules
 
 * [Catmandu::PICA](https://metacpan.org/dist/Catmandu-PICA)
 * [Catmandu::BibTeX](https://metacpan.org/pod/Catmandu::BibTeX)
