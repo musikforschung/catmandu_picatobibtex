@@ -50,9 +50,17 @@ Use the command "catmandu convert PICA --type plain to CSV --fix countrycode_jou
 * "type = {audio}" -> "type = {mr}"
 * "type = {proceedings}" -> "type = {bs}"
 
+# Author
+
+* René Wallor, wallor at sim.spk-berlin.de
+
+# Contributors
+
+* Johann Rolschewski
+
 # Licenses
 
-The file [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) is licensed with perl_5. All other files are [CCO](https://creativecommons.org/share-your-work/public-domain/cc0/).
+The file [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) is licensed with perl_5.
 
 
 </details>
@@ -112,9 +120,17 @@ Am Staatlichen Institut für Musikforschung (SIM) befindet sich die deutsche Red
 * "type = {audio}" -> "type = {mr}"
 * "type = {proceedings}" -> "type = {bs}"
 
+# Autor
+
+* René Wallor, wallor at sim.spk-berlin.de
+
+# Mitwirkende
+
+* Johann Rolschewski
+
 # Lizenzen
 
-Die Datei [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) ist mit perl_5 lizensiert. Alle anderen Dateien sind [CCO](https://creativecommons.org/share-your-work/public-domain/cc0/).
+Die Datei [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) ist mit perl_5 lizensiert.
 
 </details>
 
