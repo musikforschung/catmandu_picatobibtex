@@ -53,16 +53,15 @@ Use the command "catmandu convert PICA --type plain to CSV --fix countrycode_jou
 # Authors
 
 * [BibTeX_bms.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX_bms.pm)
-Nicolas Steenlant <nicolas.steenlant at ugent.be>
-edited by René Wallor
+Nicolas Steenlant, nicolas.steenlant at ugent.be; edited by René Wallor
 
 * files included in [Fix_bms](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/Fix_bms)
-René Wallor <wallor at sim.spk-berlin.de>
+René Wallor, wallor at sim.spk-berlin.de
 
 # Contributors
 
 * [picafix.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/picafix.fix)
-Johann Rolschewski <jorol at cpan.org>
+Johann Rolschewski, jorol at cpan.org
 
 # License an copyright
 
@@ -137,16 +136,15 @@ Am Staatlichen Institut für Musikforschung (SIM) befindet sich die deutsche Red
 # Autoren
 
 * [BibTeX_bms.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX_bms.pm)
-Nicolas Steenlant, nicolas.steenlant at ugent.be
-bearbeitet von René Wallor
+Nicolas Steenlant, nicolas.steenlant at ugent.be; bearbeitet von René Wallor
 
 * Skripte in [Fix_bms](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/Fix_bms)
-René Wallor <wallor at sim.spk-berlin.de>
+René Wallor, wallor at sim.spk-berlin.de
 
 # Mitwirkende
 
 * [picafix.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/picafix.fix)
-Johann Rolschewski <jorol at cpan.org>
+Johann Rolschewski, jorol at cpan.org
 
 # Lizenz und Copyright
 
