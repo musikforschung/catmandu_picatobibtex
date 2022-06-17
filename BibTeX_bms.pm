@@ -1,5 +1,7 @@
 package Catmandu::Exporter::BibTeX;
 
+# further tags added 08/22 by René Wallor
+
 our $VERSION = '0.21';
 
 use namespace::clean;
@@ -16,7 +18,7 @@ my $TAGS = [
         address
         articleno
         author
-        author_afterword
+        author_afterword 
         author_collaborator
         author_commentator
         author_compiled
