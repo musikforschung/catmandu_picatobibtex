@@ -159,7 +159,7 @@ pica_map('036Em','number',join:', ');
 pica_map('036F8','series',join:', ');
 pica_map('036Fl','number',join:', ');
 
-# ---------- abstracts (PICA3 4207), (by Johann Rolschewski)
+# ---------- abstracts (PICA3 4207),
 if pica_match(047I,"\(.*\)$")
    pica_map(047Ia,tmp)
    parse_text(tmp,"(?<abstract>.*\.)\s\((?<abstractor>.*)\)")
