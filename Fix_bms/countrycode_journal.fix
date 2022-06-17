@@ -1,3 +1,5 @@
+# author: René Wallor, 18.08.2021
+# version: 0.21
 # RILM needs the country code in all articles. This information must be taken from the superordinate work (journal).
 # select Id of all journals and assign the country code
 

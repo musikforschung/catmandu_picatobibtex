@@ -1,3 +1,5 @@
+# author: René Wallor, 18.08.2021
+# version: 0.21
 # delete redundant characters, rename and add data
 
 replace_all('title',"@","");

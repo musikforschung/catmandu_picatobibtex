@@ -1,3 +1,6 @@
+# author: René Wallor, 18.08.2021
+# version: 0.21
+
 pica_map('003@0','ppn');
 pica_map('004A0','isbn',join:', ');
 pica_map('004V0','doi');
