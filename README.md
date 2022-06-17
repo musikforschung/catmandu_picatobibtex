@@ -137,7 +137,7 @@ Am Staatlichen Institut für Musikforschung (SIM) befindet sich die deutsche Red
 # Autoren
 
 * [BibTeX_bms.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX_bms.pm)
-Nicolas Steenlant <nicolas.steenlant at ugent.be>
+Nicolas Steenlant, nicolas.steenlant at ugent.be
 bearbeitet von René Wallor
 
 * Skripte in [Fix_bms](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/Fix_bms)
