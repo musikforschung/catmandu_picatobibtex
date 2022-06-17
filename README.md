@@ -10,7 +10,7 @@ The German editorial office of the Répertoire International de Littérature Mus
 
 # Files description
 
-* [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) contains some RILM specific fields in BibTeX which are not supported in the original module.
+* [BibTeX_bms.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX_bms.pm) contains some RILM-specific tags that are not supported in the original Catmandu [BibTeX module](https://github.com/LibreCat/Catmandu-BibTeX/tree/main/lib/Catmandu/Exporter): abstractor, author_afterword, author_collaborator, author_commentator, author_compiled, author_foreword, author_illustrator, author_introduction, author_supervisor, author_translator, country, crossref, editora, editoratype, editorb, editorbtype, editorc, editorctype, eventdate, eventtitle, honoured, language_original, reviewed-item.
 * The script [countrycode_collection.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/countrycode_collection.fix) selects the country codes and IDs of all collections. The loader codes are written to a csv file and transferred to the essays contained in the collections in a later step.
 * [countrycode_journal.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/countrycode_journal.fix) selects the country codes and IDs of all journals. The loader codes are written to a csv file and in a later step transferred to the articles contained in the journals.
 * [festschrift_proceeding.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/festschrift_proceeding.fix) selects the IDs of all conference and festschriften and assigns the RILM-tag to them. The selected RILM-tags and IDs are written to a csv file and in a later step transferred to the articles contained in the conference and festschrift proceedings.
@@ -27,7 +27,7 @@ The German editorial office of the Répertoire International de Littérature Mus
 
 1. installation of Catmandu and the required modules.
 2. download all files into the home directory.
-3. replace the file [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) under the path "/home/kim/perl5/perlbrew/perls/perl-5.30.3/lib/site_perl/5.30.3/Catmandu/Exporter/BibTeX.pm" with the file contained here.
+3. replace the file [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) under the path "/home/kim/perl5/perlbrew/perls/perl-5.30.3/lib/site_perl/5.30.3/Catmandu/Exporter/BibTeX.pm" with the file BibTeX_bms contained here.
 3. place the file with the PICA+ data (dmpbms.pp) also in the home directory.
 4. validation of the PICA+ data. For example with [Catmandu::Validator::PICA](https://metacpan.org/pod/Catmandu::Validator::PICA).
 5. using the command "catmandu convert PICA --type plain to CSV --fix festschrift_proceeding < dmpbms.pp > festschrift_proceeding_ppn.csv" in the command line, create a list with all IDs of the conference and festschrifts and the corresponding RILM-tags for the included essays. Insert "$ less festschrift_proceeding_ppn.csv" into the header. 
@@ -80,7 +80,7 @@ Am Staatlichen Institut für Musikforschung (SIM) befindet sich die deutsche Red
 
 # Beschreibung der Dateien
 
-* [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) enthält einige RILM-spezifische Felder in BibTeX, die im ursprünglichen Modul nicht unterstützt werden.
+* [BibTeX_bms.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX_bms.pm) enthält einige RILM-spezifische tags, die im ursprünglichen Catmandu [BibTeX Modul](https://github.com/LibreCat/Catmandu-BibTeX/tree/main/lib/Catmandu/Exporter) nicht unterstützt werden: abstractor, author_afterword, author_collaborator, author_commentator, author_compiled, author_foreword, author_illustrator, author_introduction, author_supervisor, author_translator, country, crossref, editora, editoratype, editorb, editorbtype, editorc, editorctype, eventdate, eventtitle, honoured, language_original, reviewed-item.
 * Das Script [countrycode_collection.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/countrycode_collection.fix) selektiert die Ländercodes und IDs aller Sammelbände. Die Lädercodes werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Sammelbänden enthaltenen Aufsätze übertragen.
 * [countrycode_journal.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/countrycode_journal.fix) selektiert die Ländercodes und IDs aller Zeitschriften. Die Lädercodes werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Zeitschriften enthaltenen Aufsätze übertragen.
 * [festschrift_proceeding.fix](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/festschrift_proceeding.fix) selektiert die IDs aller Konferenz- und Festschriften und ordnet ihnen den RILM-tag zu. Die selektierten RILM-tags und IDs werden in eine csv-Datei geschrieben und in einem späteren Schritt auf die in den Konferenz- und Festschriften enthaltenen Aufsätzen übertragen.
@@ -97,7 +97,7 @@ Am Staatlichen Institut für Musikforschung (SIM) befindet sich die deutsche Red
 
 1. Installation von Catmandu und der benötigten Module.
 2. Download aller Dateien in das Home-Verzeichnis.
-3. Die Datei [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) unter dem Pfad "/home/kim/perl5/perlbrew/perls/perl-5.30.3/lib/site_perl/5.30.3/Catmandu/Exporter/BibTeX.pm" mit der hier enthaltenen Datei ersetzen.
+3. Die Datei [BibTeX.pm](https://github.com/musikforschung/Catmandu_PICAtoBibTeX/blob/main/BibTeX.pm) unter dem Pfad "/home/kim/perl5/perlbrew/perls/perl-5.30.3/lib/site_perl/5.30.3/Catmandu/Exporter/BibTeX.pm" mit der hier enthaltenen Datei BibTeX_bms ersetzen.
 3. Die Datei mit den PICA+ Daten (dmpbms.pp) ebenfalls im Home-Verzeichnis ablegen.
 4. Validation der PICA+ Daten. Zum Beispiel mit [Catmandu::Validator::PICA](https://metacpan.org/pod/Catmandu::Validator::PICA).
 5. Mit dem Befehl "catmandu convert PICA --type plain to CSV --fix festschrift_proceeding < dmpbms.pp > festschrift_proceeding_ppn.csv" in der Kommandozeile eine Liste mit allen IDs der Konferenz- und Festschriften erstellen und den dazugehörigen RILM-tags für die enthaltenen Aufsätze. In den header "$ less festschrift_proceeding_ppn.csv" einfügen. 
