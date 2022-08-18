@@ -59,7 +59,7 @@ my $TAGS = [
         organization
         pages
         publisher
-        reviewed-item
+        revieweditem
         school
         series
         title
