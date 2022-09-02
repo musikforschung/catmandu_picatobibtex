@@ -1,6 +1,6 @@
 package Catmandu::Exporter::BibTeX;
 
-# further tags added 08/22 by René Wallor
+# further tags added 08/22 by René Wallor, Staatliches Institut für Musikforschung
 
 our $VERSION = '0.21';
 
