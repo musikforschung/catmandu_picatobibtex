@@ -1,6 +1,6 @@
-# author: René Wallor, 18.08.2021
-# version: 0.21
-# Articles in Festschrift and proceedings needs RILM tag "ae" or "as". This information must be taken from the superordinate work. 
+# author: René Wallor, 07.10.2022
+# version: 0.22
+# Articles in Festschrift and proceedings needs RILM tag "ae" or "as". This information has to be extract from the superordinate work. 
 # select ID of all Festschrift or proceeding and assign the tag
 
 select pica_match('013D8',"Festschrift|Konferenzschrift");
