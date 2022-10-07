@@ -1,6 +1,6 @@
 package Catmandu::Exporter::BibTeX;
 
-# further tags added 08/22 by René Wallor, Staatliches Institut für Musikforschung
+# extra tags added 10/22 by René Wallor - Staatliches Institut für Musikforschung (version 2.2)
 
 our $VERSION = '0.21';
 
@@ -16,7 +16,7 @@ my $TAGS = [
         abstract
         abstractor
         address
-        articleno
+		articleno
         author
         author_afterword 
         author_collaborator
@@ -34,12 +34,6 @@ my $TAGS = [
         day
         edition
         editor
-        editora
-        editoratype
-        editorb
-        editorbtype
-        editorc
-        editorctype
         eprint
         eventdate
         eventtitle
@@ -71,7 +65,7 @@ my $TAGS = [
         )
 ];
 
-my $JOIN = {author => ' and ', author_afterword => ' and ', author_collaborator => ' and ', author_commentator => ' and ', author_compiled => ' and ', author_foreword => ' and ', author_illustrator => ' and ', author_introduction => ' and ', author_supervisor => ' and ', author_translator => ' and ', abstractor => ' and ', country => ',', editor => ' and ', language => ',',
+my $JOIN = {author => ' and ', author_afterword => ' and ', author_collaborator => ' and ', author_commentator => ' and ', author_compiled => ' and ', author_foreword => ' and ', author_illustrator => ' and ', author_introduction => ' and ', author_supervisor => ' and ', author_translator => ' and ', abstractor => ' == ', country => ',', editor => ' and ', honoured => ' and ', language => ',', institution => ' and ', abstract => ' == ',
     keywords => ',',};
 
 sub add {
